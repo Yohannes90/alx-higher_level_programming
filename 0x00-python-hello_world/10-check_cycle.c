@@ -23,8 +23,8 @@ int check_cycle(listint_t *list)
 		{
 			return (1);
 		}
-	current = current->next;
-	check = check->next->next;
+		current = current->next;
+		check = check->next->next;
 	}
 	return (0);
 }
