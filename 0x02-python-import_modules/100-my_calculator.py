@@ -14,7 +14,7 @@ if __name__ == "__main__":
         case '-':
             print("{} - {} = {}".format(op1, op2, sub(op1, op2)))
         case '*':
-            print("{} * {} = {}".format(op1, op2, mul(op1 * op2)))
+            print("{} * {} = {}".format(op1, op2, mul(op1, op2)))
         case '/':
             print("{} / {} = {}".format(op1, op2, div(op1, op2)))
         case _:
