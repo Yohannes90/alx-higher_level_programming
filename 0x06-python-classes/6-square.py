@@ -48,7 +48,7 @@ class Square:
         for row in range(size):
             for col in range(position[0]):
                 print(" ", end="")
-            for col in range(size):
+            for coll in range(size):
                 print("#", end="")
             print()
         if size == 0:
