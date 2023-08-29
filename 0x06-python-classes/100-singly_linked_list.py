@@ -1,13 +1,12 @@
 #!/usr/bin/python3
 
-""" Defining a class Node"""
-
 
 class Node:
+    """ Defining a class Node"""
 
     def __init__(self, data, next_node=None):
         self.__data = data
-        self.next_node = next_node
+        self.__next_node = next_node
 
     @property
     def data(self):
@@ -30,10 +29,8 @@ class Node:
         self.__next_node = value
 
 
-""" Defining a class Singly linked list"""
-
-
 class SinglyLinkedList:
+    """ Defining a class Singly linked list"""
 
     def __init__(self):
         self.__head = None
@@ -48,10 +45,10 @@ class SinglyLinkedList:
             node.next_node = Node(value, node.next_node)
 
     def __str__(self):
-        pri_str = ""
+        sll_str = ""
         node = self.__head
         if node is not None:
             while node is not None:
-                pri_str += str(node.data) + '\n'
+                sll_str += str(node.data) + '\n'
                 node = node.next_node
-        return pri_str[:-1]
+        return sll_str[:-1]
