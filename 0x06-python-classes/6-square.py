@@ -6,10 +6,6 @@
 class Square:
     """Represent a square"""
     def __init__(self, size=0, position=(0, 0)):
-        if not isinstance(size, int):
-            raise TypeError("size must be an integer")
-        if size < 0:
-            raise ValueError("size must be >= 0")
         self.__size = size
         self.__position = position
 
@@ -43,14 +39,12 @@ class Square:
     def my_print(self):
         size = self.__size
         position = self.__position
-        if size == 0:
-            print("")
-            return
-        for row in range(position[1]):
-            print("")
-        for row in range(size):
-            for col in range(position[0]):
-                print(" ", end="")
-            for coll in range(size):
-                print("#", end="")
-            print("")
+        if size > 0:
+            for x in range(position[1]):
+                print()
+            for y in range(size):
+                print(" " * position[0], end="")
+                print("#" * size, end="")
+                print()
+        else:
+            print()
