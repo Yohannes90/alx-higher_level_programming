@@ -43,6 +43,9 @@ class Square:
     def my_print(self):
         size = self.__size
         position = self.__position
+        if size == 0:
+            print()
+            return
         for row in range(position[1]):
             print()
         for row in range(size):
@@ -50,6 +53,4 @@ class Square:
                 print(" ", end="")
             for coll in range(size):
                 print("#", end="")
-            print()
-        if size == 0:
             print()
