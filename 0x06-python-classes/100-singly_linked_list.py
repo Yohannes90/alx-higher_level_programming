@@ -2,12 +2,13 @@
 
 """Defining classes for singly linked list"""
 
+
 class Node:
     """ Represent a Node in a Singly linked list"""
 
     def __init__(self, data, next_node=None):
         """Initalize new node
-        
+
         Args:
             data (int): data of new node
             next_node: next node of new node
@@ -39,7 +40,7 @@ class Node:
 
 
 class SinglyLinkedList:
-    """ Defining a class Singly linked list"""
+    """ Represent a Singly linked list"""
 
     def __init__(self):
         """Initalize new SinglyLinkedList"""
