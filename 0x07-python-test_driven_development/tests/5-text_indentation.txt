@@ -1,0 +1,92 @@
+=============================
+How Use 4-text_indentation.py
+=============================
+
+This module defines a text indentation function ``text_indentation(text)``.
+
+Usage
+=====
+
+Text is printed with two new lines after each of the characters ``.``, ``?``,
+and ``:``.
+ 
+::
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+    >>> text_indentation("Hello?")
+    Hello?
+    <BLANKLINE>
+
+::
+
+Checking for no args:
+        >>> text_indentation()
+        Traceback (most recent call last):
+        TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+::
+
+Checking for too many args:
+          >>> text_indentation("Hello", "Hey")
+          Traceback (most recent call last):
+          TypeError: text_indentation() takes 1 positional argument but 2 were given
+
+::
+
+Checking for passing non-string type:
+        >>> text_indentation(1)
+        Traceback (most recent call last):
+        TypeError: text must be a string
+
+::
+
+Checking for endingin special char:
+        >>> text_indentation("""Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quonam modo? Utrum igitur tibi litteram videor an totas paginas commovere? Non autem hoc: igitur ne illud quidem.""")
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        <BLANKLINE>
+        Quonam modo?
+        <BLANKLINE>
+        Utrum igitur tibi litteram videor an totas paginas commovere?
+        <BLANKLINE>
+        Non autem hoc:
+        <BLANKLINE>
+        igitur ne illud quidem.
+        <BLANKLINE>
+
+::
+  
+Checking for multiple spaces:
+        >>> text_indentation("   Hello.  How are you?   ")
+        Hello.
+        <BLANKLINE>
+        How are you?
+        <BLANKLINE>
+
+::
+
+Checking for standalone special chars:
+        >>> text_indentation(" . ? : ")
+        .
+        <BLANKLINE>
+        ?
+        <BLANKLINE>
+        :
+        <BLANKLINE>
+
+::
+
+Checking for newline at beginning:
+        >>> text_indentation(" \n Heard. Your up to something?")
+        <BLANKLINE>
+        Heard.
+        <BLANKLINE>
+        Your up to something?
+        <BLANKLINE>
+
+::
+
+Checking for newline at end:
+        >>> text_indentation("Hello, how are you?\n")
+        Hello, how are you?
+        <BLANKLINE>
+        <BLANKLINE>
