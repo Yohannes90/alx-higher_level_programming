@@ -1,0 +1,37 @@
+===========================
+How Use 3-say_my_name.py
+===========================
+
+This module defines a full name saying function ``say_my_name(first_name, last_name="")``.
+
+Usage
+=====
+
+``say_my_name(...)``` prints My name is <first name> <last name>.
+ 
+::
+
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Checking for normal use:
+    >>> say_my_name("Yohannes", "Mekonnen")
+    My name is Yohannes Mekonnen
+
+Checking for one arg:
+    >>> say_my_name("Yohannes")
+    My name is Yohannes
+
+Checking for more than two args:
+    >>> say_my_name("Yoh", "sas", "ewqa")
+    Traceback (most recent call last):
+    TypeError: say_my_name() takes from 1 to 2 positional arguments but 3 were given
+    
+Checking for wrong type for first_name:
+    >>> say_my_name(12)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+Checking for wrong type for last_name:
+    >>> say_my_name("Yohannes", [12, 1])
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
