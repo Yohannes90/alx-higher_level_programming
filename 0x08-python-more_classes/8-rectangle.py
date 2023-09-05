@@ -63,14 +63,20 @@ class Rectangle:
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
-        """Return the rectangle with greater area
+        """Return the biggest rectangle with based on the area.
 
         Args:
             rect_1 (Rectangle): first Rectangle
             rect_2 (Rectangle): second Rectangle
+
         Raises:
-            TypeError: if either parameter is not of type Rectangle
+            TypeError: if first argument is not of type/instance Rectangle
+            TypeError: if first argument is not of type/instance Rectangle
+
+        Returns:
+            Rectangle: the biggest interms of area
         """
+
         if not isinstance(rect_1, Rectangle):
             raise TypeError("rect_1 must be a instance of Rectangle")
         if not isinstance(rect_2, Rectangle):
