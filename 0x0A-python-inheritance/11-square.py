@@ -10,9 +10,6 @@ class Square(Rectangle):
         self.__size = size
         super().__init__(self.__size, self.__size)
 
-    def area(self):
-        return self.size ** 2
-
     def __str__(self):
         """String representation of rectangle object"""
         return ("[Square] {}/{}".format(self.__size, self.__size))
