@@ -1,9 +1,17 @@
-Test 7-base_geometry.py
+Test ``7-base_geometry.py`` module
 =========================================
 
-Importing function form module:
+This module defines function for BaseGeometry ``say_my_name(first_name, last_name="")``.
+
+Usage
+=====
+
+``area(...)``` notting yet.
+``integer_validator(...)``` validates a value as an integer and greater than 0.
+ 
+::
+
     >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
-    >>>
 
 Checking module is documented:
     >>> m = __import__('7-base_geometry').__doc__
