@@ -1,0 +1,82 @@
+Test 7-base_geometry.py
+=========================================
+
+Importing function form module:
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+    >>>
+
+=========================================
+
+Checking for class docstring:
+    >>> m = __import__('7-base_geometry').__doc__
+    >>> len(m) > 1
+    True
+
+=========================================
+
+Checking for class docstring:
+    >>> c = __import__('7-base_geometry').BaseGeometry.__doc__
+    >>> len(c) > 1
+    True
+
+=========================================
+Checking for area failure:
+
+    >>> base_geometry = BaseGeometry()
+    >>> base_geometry.area()
+    Traceback (most recent call last):
+    ...
+    Exception: area() is not implemented
+
+=========================================
+
+Checking for integer = 0:
+
+    >>> base_geometry.integer_validator("integer", 0)
+    Traceback (most recent call last):
+    ...
+    ValueError: integer must be greater than 0
+
+=========================================
+
+Checking for integer < 0:
+
+    >>> base_geometry.integer_validator("integer", -3)
+    Traceback (most recent call last):
+    ...
+    ValueError: integer must be greater than 0
+
+==========================================
+
+Checking for non-integer:
+
+    >>> base_geometry.integer_validator("integer", "3")
+    Traceback (most recent call last):
+    ...
+    TypeError: integer must be an integer
+
+===========================================
+
+Checking for integer:
+    >>> base_geometry.integer_validator("integer", 3)
+    
+
+=========================================
+
+Checking for no argument to integer_validator():
+
+    >>> base_geometry.integer_validator()
+    Traceback (most recent call last):
+    ...
+    TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+=========================================
+
+Checking for one argument to integer_validator():
+
+    >>> base_geometry.integer_validator("integer")
+    Traceback (most recent call last):
+    ...
+    TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+
+
