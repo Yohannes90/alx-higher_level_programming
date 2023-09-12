@@ -30,10 +30,14 @@ Checking for method docstring:
     True
 
 =========================================
+Checking instantioation:
+
+    >>> base_geometry = BaseGeometry()
+
+=========================================
 
 Checking for area failure:
 
-    >>> base_geometry = BaseGeometry()
     >>> base_geometry.area()
     Traceback (most recent call last):
     ...
@@ -43,34 +47,79 @@ Checking for area failure:
 
 Checking for integer = 0:
 
-    >>> base_geometry.integer_validator("integer", 0)
+    >>> base_geometry.integer_validator("age", 0)
     Traceback (most recent call last):
     ...
-    ValueError: integer must be greater than 0
+    ValueError: age must be greater than 0
 
 =========================================
 
 Checking for integer < 0:
 
-    >>> base_geometry.integer_validator("integer", -3)
+    >>> base_geometry.integer_validator("age", -4)
     Traceback (most recent call last):
     ...
-    ValueError: integer must be greater than 0
+    ValueError: age must be greater than 0
 
 ==========================================
 
-Checking for non-integer:
+Checking for str:
 
-    >>> base_geometry.integer_validator("integer", "3")
+    >>> base_geometry.integer_validator("age", "4")
     Traceback (most recent call last):
     ...
-    TypeError: integer must be an integer
+    TypeError: age must be an integer
 
 ===========================================
 
+Checking for tuple:
+
+    >>> base_geometry.integer_validator("age", (4,))
+    Traceback (most recent call last):
+    ...
+    TypeError: age must be an integer
+
+===========================================
+
+Checking for array:
+
+    >>> base_geometry.integer_validator("age", [4])
+    Traceback (most recent call last):
+    ...
+    TypeError: age must be an integer
+
+===========================================
+
+Checking for boolean:
+
+    >>> base_geometry.integer_validator("age", True)
+    Traceback (most recent call last):
+    ...
+    TypeError: age must be an integer
+
+===========================================
+
+Checking for non-integer:
+
+    >>> base_geometry.integer_validator("age", {3, 4})
+    Traceback (most recent call last):
+    ...
+    TypeError: age must be an integer
+
+===========================================
+
+Checking for None:
+
+    >>> base_geometry.integer_validator("age", None)
+    Traceback (most recent call last):
+    ...
+    TypeError: age must be an integer
+
+===========================================
+
+
 Checking for integer:
-    >>> base_geometry.integer_validator("integer", 3)
-    
+    >>> base_geometry.integer_validator("age", 1)
 
 =========================================
 
@@ -81,13 +130,11 @@ Checking for no argument to integer_validator():
     ...
     TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
-=========================================
+========================================
 
 Checking for one argument to integer_validator():
 
-    >>> base_geometry.integer_validator("integer")
+    >>> base_geometry.integer_validator("age")
     Traceback (most recent call last):
     ...
     TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
-
-
