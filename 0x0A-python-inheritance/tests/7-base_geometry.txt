@@ -5,12 +5,17 @@ Importing function form module:
     >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
     >>>
 
-Checking for class docstring:
+Checking module is documented:
     >>> m = __import__('7-base_geometry').__doc__
     >>> len(m) > 1
     True
 
-Checking for class docstring:
+Checking class is documented:
+    >>> c = __import__('7-base_geometry').BaseGeometry.__doc__
+    >>> len(c) > 1
+    True
+
+Checking method is documented:
     >>> mod1 = __import__('7-base_geometry').BaseGeometry.area.__doc__
     >>> len(mod1) > 1
     True
@@ -18,14 +23,20 @@ Checking for class docstring:
     >>> len(mod2) > 1
     True
 
-
-Checking for method docstring:
-    >>> c = __import__('7-base_geometry').BaseGeometry.__doc__
-    >>> len(c) > 1
-    True
-
-Checking instantioation:
+Checking instantiation:
     >>> bg = BaseGeometry()
+
+Checking case bg = BaseGeometry() print(dir(bg))
+    >>> print(dir(bg))
+    ['__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'area', 'integer_validator']
+
+Checking case: bg = BaseGeometry() bg.integervalidator(“myint”, 12)
+    >>> bg.integer_validator("myint", 12)
+
+
+Checking case: bg = BaseGeometry() bg.integer_validator(“width”, 89)
+    >>> bg.integer_validator("width", 89)
+
 
 Checking for area failure:
     >>> bg.area()
@@ -53,6 +64,12 @@ Checking for integer < 0:
 
 Checking for str:
     >>> bg.integer_validator("age", "4")
+    Traceback (most recent call last):
+    ...
+    TypeError: age must be an integer
+
+Checking for float:
+    >>> bg.integer_validator("age", 13.5)
     Traceback (most recent call last):
     ...
     TypeError: age must be an integer
