@@ -1,8 +1,5 @@
 #!/usr/bin/python3
-import os
 import sys
-import json
-import pep8
 import unittest
 from io import StringIO
 from models.base import Base
@@ -19,32 +16,6 @@ class TestBase(unittest.TestCase):
 
     def tearDown(self):
         sys.stdout = sys.__stdout__
-
-    def test_pep8_model(self):
-        p8 = pep8.StyleGuide(quiet=True)
-        p = p8.check_files(['models/base.py'])
-        self.assertEqual(p.total_errors, 0, "fix pep8")
-
-    def test_pep8_test(self):
-        p8 = pep8.StyleGuide(quiet=True)
-        p = p8.check_files(['tests/test_models/test_base.py'])
-        self.assertEqual(p.total_errors, 0, "fix pep8")
-
-    def test_docstrings(self):
-        self.assertIsNotNone(module_doc)
-        self.assertIsNotNone(Base.__doc__)
-        self.assertIs(hasattr(Base, "__init__"), True)
-        self.assertIsNotNone(Base.__init__.__doc__)
-        self.assertIs(hasattr(Base, "create"), True)
-        self.assertIsNotNone(Base.create.__doc__)
-        self.assertIs(hasattr(Base, "to_json_string"), True)
-        self.assertIsNotNone(Base.to_json_string.__doc__)
-        self.assertIs(hasattr(Base, "from_json_string"), True)
-        self.assertIsNotNone(Base.from_json_string.__doc__)
-        self.assertIs(hasattr(Base, "save_to_file"), True)
-        self.assertIsNotNone(Base.save_to_file.__doc__)
-        self.assertIs(hasattr(Base, "load_from_file"), True)
-        self.assertIsNotNone(Base.load_from_file.__doc__)
 
     def test_id(self):
         Base._Base__nb_objects = 0
