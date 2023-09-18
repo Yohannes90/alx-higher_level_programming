@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """This module defines a class Base of all other classes."""
+import csv
 import json
 
 
@@ -69,3 +70,32 @@ class Base:
             tmp = cls.create(**instance)
             instances.append(tmp)
         return instances
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        '''Serializes and deserializes in CSV'''
+        file_name = cls.__name__ + ".csv"
+        with open(file_name, 'w', newline='') as fd:
+            write_this = csv.writer(fd, delimiter=" ")
+            if cls.__name__ == "Rectangle":
+                for item in list_objs:
+                    string = ""
+                    item = item.to_dictionary()
+                    string += (str(item["id"]) + "," +
+                               str(item["width"]) + "," +
+                               str(item["height"]) + "," +
+                               str(item["x"]) + "," + str(item["y"]))
+                    write_this.writerow(string)
+            if cls.__name__ == "Square":
+                for item in list_objs:
+                    string = ""
+                    item = item.to_dictionary()
+                    string += (str(item["id"]) + "," +
+                               str(item["size"]) + "," +
+                               str(item["x"]) + "," + str(item["y"]))
+                    write_this.writerow(string)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        '''helper to Serializes and deserializes in CSV'''
+        return ([])
