@@ -5,7 +5,6 @@ from models.base import Base
 
 class Rectangle(Base):
     """Defines a rectangle class"""
-    
     def __init__(self, width, height, x=0, y=0, id=None):
         """Initalize rectangle object"""
         self.width = width
@@ -83,7 +82,11 @@ class Rectangle(Base):
 
     def __str__(self):
         """String representation of rectangle object"""
-        return ("[Rectangle] ({}) {}/{} {}/{}".format(self.id, self.x, self.y, self.width, self.height))
+        return ("[Rectangle] ({}) {}/{} {}/{}".format(self.id,
+                                                      self.x,
+                                                      self.y,
+                                                      self.width,
+                                                      self.height))
 
     def update(self, *args, **kwargs):
         '''Assigns/updates an argument to each rectangle attribute'''

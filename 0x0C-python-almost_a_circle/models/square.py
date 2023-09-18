@@ -11,7 +11,10 @@ class Square(Rectangle):
 
     def __str__(self):
         """String representation of rectangle object"""
-        return ("[Square] ({:d}) {:d}/{:d} - {:d}".format(self.id, self.x, self.y, self.width))
+        return ("[Square] ({:d}) {:d}/{:d} - {:d}".format(self.id,
+                                                          self.x,
+                                                          self.y,
+                                                          self.width))
 
     @property
     def size(self):
@@ -23,7 +26,7 @@ class Square(Rectangle):
         """Square size setter"""
         self.width = value
         self.height = value
-        
+
     def update(self, *args, **kwargs):
         '''Assigns/updates an argument to each square attribute'''
         if len(args):
@@ -47,4 +50,3 @@ class Square(Rectangle):
                 'x': getattr(self, "x"),
                 'size': getattr(self, "size"),
                 'y': getattr(self, "y")}
-
