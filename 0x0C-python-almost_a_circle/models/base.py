@@ -75,7 +75,7 @@ class Base:
     def save_to_file_csv(cls, list_objs):
         '''Serializes and deserializes in CSV'''
         file_name = cls.__name__ + ".csv"
-        with open(file_name, 'w', newline='') as fd:
+        with open(file_name, mode="w", newline='', encoding="UTF8") as fd:
             write_this = csv.writer(fd, delimiter=" ")
             if cls.__name__ == "Rectangle":
                 for item in list_objs:
