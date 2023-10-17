@@ -1,4 +1,4 @@
--- creates the database hbtn_0c_0 in MySQL server
+-- creates a table called first_table in current database MySQL server
 
-CREATE DATABASE IF NOT EXISTS `first_table`
+CREATE TABLE IF NOT EXISTS `first_table`
     (`id` INT, `name` VARCHAR(256));
