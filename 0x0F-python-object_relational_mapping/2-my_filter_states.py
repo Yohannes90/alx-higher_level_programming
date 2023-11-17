@@ -12,8 +12,9 @@ if __name__ == '__main__':
     cur = conn.cursor()
     state = argv[4]
     cur.execute("SELECT * FROM states WHERE name LIKE '{}'".format(state))
-    row = cur.fetchone()
-    print(row)
+    rows = cur.fetchall()
+    for row in rows:
+        print(row)
 
     cur.close()
     conn.close()
