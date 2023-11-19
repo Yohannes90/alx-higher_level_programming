@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 
+"""lists all State objects, and corresponding City objects in hbtn_0e_101_usa
+"""
 from sys import argv
 from relationship_state import Base, State
 from relationship_city import City
