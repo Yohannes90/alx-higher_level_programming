@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" takes URL, sends request to  URL, displays value of X-Request-Id variable in header response
+""" send request to URL it took, display X-Request-Id value in header response
 """
 
 import sys
