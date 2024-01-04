@@ -7,11 +7,7 @@ request(url, (error, response, body) => {
     const todos = JSON.parse(body);
     const completed = {};
     todos.filter(task => task.completed).forEach((todo) => {
-      if (completed[todo.userId] === undefined) {
-        completed[todo.userId] = 1;
-      } else {
-        completed[todo.userId] += 1;
-      }
+      completed[todo.userId] = completed[todo.userId] === undefined ? 1 : completed[todo.userId] += 1;
     });
     console.log(completed);
   }
